@@ -1,0 +1,178 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1in]{geometry}%设置边距，符合Word设定
+\usepackage{ctex}
+\usepackage{setspace}
+\usepackage{amsmath }
+\usepackage{lipsum}
+\usepackage{graphicx}%插入图片
+\graphicspath{{Figures/}}%文章所用图片在当前目录下的 Figures目录
+
+\usepackage{hyperref} % 对目录生成链接，注：该宏包可能与其他宏包冲突，故放在所有引用的宏包之后
+\hypersetup{colorlinks = true,  % 将链接文字带颜色
+	bookmarksopen = true, % 展开书签
+	bookmarksnumbered = true, % 书签带章节编号
+	pdftitle = This is a testfile for vscode, % 标题
+	pdfauthor =Ali-loner} % 作者
+\bibliographystyle{plain}% 参考文献引用格式
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+
+\renewcommand{\contentsname}{\centerline{Contents}} %经过设置word格式后，将目录标题居中
+
+
+\title{\heiti\zihao{2} This is a testfile for vscode}
+\author{\songti Ali-loner}
+\date{2020.08.02}
+
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+
+\begin{abstract}
+	\lipsum[2]
+\end{abstract}
+
+\tableofcontents
+
+\section{This is a section}
+Hello world! Hello Ali! As shown in figure \ref{1}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.2]{Ali.jpg}
+	\caption{this is Sihan Cao}
+	\label{1}
+\end{figure}
+
+\section{Molecular Dynamics}
+Classical mechanics can not be the whole story.
+Statistical Mechanics, (some system that not seem to go to the lowest energy)
+\bigskip
+Today I watch 46:43
+\bigskip
+
+\section{Probability Theory:}
+\subsection{Probability Distribution}
+All Probability Distribution must be normalized: sum over all possible outcomes must be "1"!
+flip coin is a discrete variable (The outcome only has finite value), but in molecular dynamics we mainly think of continous variable.
+\subsubsection{Normalization for continous variable}:
+$\int_{-\infty}^{+\infty} p(x)dx = 1$
+\subsubsection{Expected Value (aka Mean value, first moment of the distribution)}
+\begin{equation}
+	\langle X \rangle=\int_{-\infty}^{+\infty}xp(x)dx
+\end{equation}
+The $n_{th}$ order moment can be calculated through:
+\begin{equation}
+	\langle X^{n} \rangle = \int_{-\infty}^{+\infty}x^{n}p(x) dx
+\end{equation}
+
+\subsubsection{Statistical Property}
+Variance: "cumulant"
+\begin{equation}
+	Var(X)=\langle X^{2} \rangle - {\langle X \rangle}^{2}
+\end{equation}
+
+Standard Deviation: Not cumulant, but has same unit as X
+\begin{equation}
+	std(x)=\sqrt{Var(X)}
+\end{equation}
+
+\subsection{Lattice Model}
+Space is discretizied, and each discrete cell can hold 0 or 1 particle.
+Microstate <---> Combinations
+
+For the probablistic mechanics, the multi-cimponents system go to the (macro) state with the highest multiplicity (combos)
+这句话是测试能否进行引用及支持中文\upcite{1}。
+
+\section{Computer Version}
+\subsection{Rotation Matrix}
+$$
+\begin{bmatrix}
+	{\cos\theta} & {-\sin\theta} \\
+	{\sin\theta} & {\cos\theta}
+\end{bmatrix}	
+$$
+For the linear transformation we only need to care about 
+$$
+\begin{bmatrix}
+	1 \\
+	0
+\end{bmatrix}
+$$
+which is the x-axis unit vector of the original coordinate and
+$$ 
+\begin{bmatrix}
+	0 \\
+	1
+\end{bmatrix}
+$$
+which is the y-axis unit vector of the original coordinate.
+Just draw a circle, and calculate the coordinate of the unit vector after rotation. The coordinate for the x-axis unit vector is the first column of the rotation matrix, and the y-axis is the second column
+\bigskip
+To use the rotation Matrix it's just like:
+$$
+\begin{bmatrix}
+	x^{1}\\
+	y^{1}
+\end{bmatrix}
+=A
+\begin{bmatrix}
+	x\\
+	y
+\end{bmatrix}
+$$
+
+\bigskip
+\section{Homework Part}
+Stirling's approximation 
+\begin{equation}
+	N! = (\frac{N}{e})^{N}
+	\ln N! \approx N\ln N- N
+\end{equation}
+\subsection{Problem 5}
+Lennard Jones law: $4 \epsilon [(\frac{\sigma}{r})^{12}-(\frac{\sigma}{r})^{6}]$
+For a FCC material $U(d)=\frac{1}{2} 4 \epsilon $
+\newline
+The $r^{12}$ term is the short term repulsive term (describe Pauli Repulsion), and the $r^{6}$ is the long term attractive term (describe van der Waals force or dispersion force).
+
+\subsubsection{(a)}
+The sum of the energy of the material could be written as: 
+\begin{equation}
+	U=4\epsilon [(\frac{\sigma}{r})^{12}-(\frac{\sigma}{r})^{6}]=\frac{1}{2}N 4\epsilon (\frac{(\sigma)^{12}}{(d)^{12}}A-\frac{(\sigma)^{6}}{(d)^{6}}B)
+\end{equation}
+
+To calculate A and B:
+\begin{equation}
+	A=2*(\frac{\sigma^{12}}{d^{12}}) + 2*(\frac{\sigma^{12}}{(2d)^{12}}) + 2*(\frac{\sigma^{12}}{(3d)^{12}})+...=2.0005 (\frac{\sigma^{12}}{d^{12}})
+\end{equation}
+\begin{equation}
+	B=2*(\frac{\sigma^{6}}{d^{6}}) + 2*(\frac{\sigma^{6}}{(2d)^{6}}) + 2*(\frac{\sigma^{6}}{(3d)^{6}})+2*(\frac{\sigma^{6}}{(4d)^{6}})+... = 1.0173 (\frac{\sigma^{6}}{d^{6}})
+\end{equation}
+
+Then,
+\begin{equation}
+	U=\frac{1}{2}N 4 \epsilon [2.0005 \frac{\sigma^12}{d^12}-1.0173 \frac{\sigma^6}{d^6}]
+\end{equation}
+To calculate the equilibirium space d, 
+\begin{equation}
+	\frac{\mathrm{d} U}{\mathrm{d}r}=0
+\end{equation}
+
+So the $d$ is $\sqrt[6]{\frac{2 \times 2.0005}{1.0173}} \sigma=1.2564 \sigma$
+
+The d just depend on length scale $\sigma$, but has no relationship with energy scale $\epsilon$
+
+\subsubsection{b}
+If there is no energy dissipation, the total system will vibrate like a wave. 
+
+\subsubsection{c}
+The total energy of the system is $U=2N \epsilon [A\frac{\sigma^{12}}{r^{12}}-B\frac{\sigma^{6}}{r^{6}}]$, so $\frac{\mathrm{d^{2}}u}{\mathrm{d}r^{2}}=2N \epsilon [A \sigma^{12}(12 \times 13 r^{-14})-B \sigma^{6}(42 r^{-8})]=2N\epsilon [2.0005\sigma^{12} \times 156 \times(1.2564 \sigma)^{-14}-1.0173\sigma^{6}\times 42 \times (1.2564 \sigma)^{-8}]$
+So the effective spring constant equals:$11.7938N\epsilon \sigma^{-2}$
+
+\subsection{Problem 8}
+\subsubsection{a}
+For one lattice, the combination is $C_{N}^{n}$. Because the system has two lattices, so the total number of combinations is $C_{N}^{n} \cdot C_{N}^{n} = (C_{N}^{n})^2$
+\subsubsection{b}
+The total number of combinations is $C_{2N}^{2n}$
+
+\bibliography{books}
+\end{document}
