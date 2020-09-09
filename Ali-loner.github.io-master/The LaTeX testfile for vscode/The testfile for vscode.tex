@@ -6,7 +6,8 @@
 \usepackage{lipsum}
 \usepackage{graphicx}%插入图片
 \graphicspath{{Figures/}}%文章所用图片在当前目录下的 Figures目录
-
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
 \usepackage{hyperref} % 对目录生成链接，注：该宏包可能与其他宏包冲突，故放在所有引用的宏包之后
 \hypersetup{colorlinks = true,  % 将链接文字带颜色
 	bookmarksopen = true, % 展开书签
@@ -86,6 +87,25 @@ For the probablistic mechanics, the multi-cimponents system go to the (macro) st
 \section{Machine Learning and artifical intelligence for engineers}
 \subsection{Lecture}
 \subsubsection{Lecture 3}
+Gradient decsent 
+
+All samples. 
+\paragraph{Stichastic Gradient Descent} SGD (Stochastic Gradient Descent), don't sum all the samples, just do it one by one.
+Stochastic (S) comes from 
+
+\paragraph{Epoch} one epoch is go through all the data points from 1 to m.
+When to stop training: the cost function.
+
+\paragraph{Batch Gradient Descent}
+\paragraph{mini Batch Gradient Descent}
+One mini batch is one epoch. <<deeplearning.ai>> \url{deeplearning.ai} 
+
+\paragraph{Cost function:}
+the landsacpe is settle (The cost function is the same)
+\paragraph{Evaluation matrices:}
+SSE, sum square error (sum of square error for each sample)
+MSE (Mean Square Error), devide SSE by m, which is the data points you have. 
+\paragraph{Training and Test Set:}
 
 
 \section{Computer Version}
