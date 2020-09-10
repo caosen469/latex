@@ -259,17 +259,26 @@ When I try to print the number, there is a overflow error in python.
 For one lattice, the combination is $C_{N}^{n}$. Because the system has two lattices, so the total number of combinations is $C_{N}^{n} \cdot C_{N}^{n} = (C_{N}^{n})^2$
 \subsubsection{b}
 The total number of combinations is $C_{2N}^{2n}$
-The $W_{A}$ could be writeen as $\frac{N!}{n!(N-n)!}\cdot\frac{N!}{n!(N-n)!}$, and the $W_{B}$ could be written as $\frac{(2N)!}{(2n)!(2N-2n)!}$ Based on \url{http://hydrogen.physik.uni-wuppertal.de/hyperphysics/hyperphysics/hbase/math/stirling.html} the general form of sterling approximation could is $n! \approx n^{n}e^{-n}\sqrt{2 \pi n}$, So the ratio between $W_{A}$ and $W_{B}$ could be calculated through:
+The $W_{A}$ could be writeen as $\frac{N!}{n!(N-n)!}\cdot\frac{N!}{n!(N-n)!}$, and the $W_{B}$ could be written as $\frac{(2N)!}{(2n)!(2N-2n)!}$ Based on the form of sterling approximation, when N is really large is $N! = N^{N}e^{-N}$, So the ratio between $W_{A}$ and $W_{B}$ could be calculated through:
 \begin{equation}
 	\frac{W_{B}}{W_{A}}=\frac{(2N)!}{(2n)!(2N-2n)!}\cdot \frac{n! n!}{(2n)!}\cdot \frac{(N-n)!(N-n)!}{(2N-2n)!}
 \end{equation}
 We could use $\frac{N!N!}{(2N)!}$ as an example:
 \begin{equation}
-	\frac{N^{N}e^{-N}\sqrt{2 \pi N} N^{N} e^{-N}\sqrt{2 \pi N}}{(2N)^{2N}e^{-2N}\sqrt{4 \pi N}}=\frac{\sqrt{\pi N}}{4^{N}}
+	\frac{(\frac{2N}{e})^{2N}}{(\frac{N}{e})^{2N}}=2^{2N}
 \end{equation}
-So the second term is $\frac{4^{n}}{\sqrt{\pi n}}$ and the third term is $\frac{4^{N-n}}{\sqrt{\pi (N-n)}}$. 
+So the second term is just using $n$ to replace the $N$ in the previous equation, so it is $\frac{1}{2^{2n}}$ and the third term is $\frac{1}{2^{2N-2n}}$. 
 \newline
-So the result is $\frac{W_{B}}{W_{A}}=\sqrt{\frac{N}{\pi n(N-n)}}$
+So the result is the total Product of the three term:
+\begin{equation}
+	2^{2N} \cdot \frac{1}{2^{2n}} \cdot \frac{1}{2^{2N-2n}}=1
+\end{equation}
+\subsubsection{c}
+Based on the previous question, the entropy difference could be calculated as following:
+\begin{equation}
+	\Delta S=k \ln (\frac{W_{B}}{W_{A}})=k \ln(1) =0
+\end{equation}}
+
 
 \bibliography{books}
 \end{document}
