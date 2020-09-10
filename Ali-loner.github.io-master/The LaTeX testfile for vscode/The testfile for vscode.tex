@@ -107,6 +107,15 @@ SSE, sum square error (sum of square error for each sample)
 MSE (Mean Square Error), devide SSE by m, which is the data points you have. 
 \paragraph{Training and Test Set:}
 
+\section{Probability and Estimation Method for Engineering System}
+\subsection{Lecture}
+\subsubsection{Lecture 3}
+\paragraph{probability function}
+\paragraph{Total Probability and Bayes' formula}
+Conditional Distributions are distributions
+conditional expectationa and variance
+\subparagraph{Hw}
+Independent event diagram
 
 \section{Computer Version}
 \subsection{Rotation Matrix}
@@ -160,6 +169,10 @@ $$
 For the image Processing, there are point operation and neighborhood operation.
 
 
+\section{Molecular Dynamics}
+\subsection{Lecture}
+\subsubsection{Lecture 3}
+
 \bigskip
 \section{Homework Part}
 Stirling's approximation 
@@ -207,11 +220,56 @@ If there is no energy dissipation, the total system will vibrate like a wave.
 The total energy of the system is $U=2N \epsilon [A\frac{\sigma^{12}}{r^{12}}-B\frac{\sigma^{6}}{r^{6}}]$, so $\frac{\mathrm{d^{2}}u}{\mathrm{d}r^{2}}=2N \epsilon [A \sigma^{12}(12 \times 13 r^{-14})-B \sigma^{6}(42 r^{-8})]=2N\epsilon [2.0005\sigma^{12} \times 156 \times(1.2564 \sigma)^{-14}-1.0173\sigma^{6}\times 42 \times (1.2564 \sigma)^{-8}]$
 So the effective spring constant equals:$11.7938N\epsilon \sigma^{-2}$
 
+\subsection{Problem 6}
+The weight of one mole water is 18 g/mol, and the density of water is 1g/mL.
+\subsubsection{diameter of 1 nm:} The volume of the water drop is $\frac{4}{3}\pi r^{3}$, so the volume of the drop is $\frac{4}{3}\pi \cdot (1 nm)^{3}$. The density is 1g/mL, which could be written as $1g/cm^{3}=1g/(10^{6}nm)^{3}$. So the number of molecules can be calculated through the following formulation:
+\begin{equation}
+	Mole=\frac{4}{3}\pi \cdot (1 nm)^{3} \cdot 1g/(10^{6}nm)^{3} \div 18 g/mol=2.327 \times 10^{-19} mole 
+\end{equation}
+To get the number of molecules just multiply the mole with Avogrado's number:
+\begin{equation}
+	Number =2.327 \times 10^{-19} mole \times 6.022 \times 10^{23}=140132 \approx 1.4 \times 10^{5}
+\end{equation}
+
+\subsubsection{diameter of 1$\mu$ m}
+Same method just changed the volume of the drop:
+\begin{equation}
+	\frac{4}{3}\pi \cdot (10^{3} nm)^{3} \cdot 1g/(10^{6}nm)^{3} \div 18 g/mol \times 6.022 \times 10^{23} \approx 1.4 \times 10^{14}
+\end{equation}
+
+\subsubsection{diameter of 1 mm}
+\begin{equation}
+	\frac{4}{3}\pi \cdot (10^{6} nm)^{3} \cdot 1g/(10^{6}nm)^{3} \div 18 g/mol \times 6.022 \times 10^{23} \approx 1.4 \times 10^{23}
+\end{equation}
+
+\subsection{b}
+Note that there are "A" water molecules. There are 3A atoms in the system. For the first water molecule, its atoms could have (3A-3) interactions. For the second water molecule, its atoms have (3A-6). Based on this pattern, the total pairs is:
+\begin{equation}
+	3(A-1) \cdot 3(A-2) \cdot \dots \cdot 3(2) \cdot 3(1)=3^{A-1} \times (A-1)!
+\end{equation}
+So, for the waterdrop with 1 nm, the number of pairs is; For the mm pair, the number of pair is $3^{1.4 \times 10^{23}} \times (1.4 \times 10^{23}-1)!$
+
+\subsection{c}
+When I try to print the number, there is a overflow error in python.
+
+\subsection{Problem 7}
+
 \subsection{Problem 8}
 \subsubsection{a}
 For one lattice, the combination is $C_{N}^{n}$. Because the system has two lattices, so the total number of combinations is $C_{N}^{n} \cdot C_{N}^{n} = (C_{N}^{n})^2$
 \subsubsection{b}
 The total number of combinations is $C_{2N}^{2n}$
+The $W_{A}$ could be writeen as $\frac{N!}{n!(N-n)!}\cdot\frac{N!}{n!(N-n)!}$, and the $W_{B}$ could be written as $\frac{(2N)!}{(2n)!(2N-2n)!}$ Based on \url{http://hydrogen.physik.uni-wuppertal.de/hyperphysics/hyperphysics/hbase/math/stirling.html} the general form of sterling approximation could is $n! \approx n^{n}e^{-n}\sqrt{2 \pi n}$, So the ratio between $W_{A}$ and $W_{B}$ could be calculated through:
+\begin{equation}
+	\frac{W_{B}}{W_{A}}=\frac{(2N)!}{(2n)!(2N-2n)!}\cdot \frac{n! n!}{(2n)!}\cdot \frac{(N-n)!(N-n)!}{(2N-2n)!}
+\end{equation}
+We could use $\frac{N!N!}{(2N)!}$ as an example:
+\begin{equation}
+	\frac{N^{N}e^{-N}\sqrt{2 \pi N} N^{N} e^{-N}\sqrt{2 \pi N}}{(2N)^{2N}e^{-2N}\sqrt{4 \pi N}}=\frac{\sqrt{\pi N}}{4^{N}}
+\end{equation}
+So the second term is $\frac{4^{n}}{\sqrt{\pi n}}$ and the third term is $\frac{4^{N-n}}{\sqrt{\pi (N-n)}}$. 
+\newline
+So the result is $\frac{W_{B}}{W_{A}}=\sqrt{\frac{N}{\pi n(N-n)}}$
 
 \bibliography{books}
 \end{document}

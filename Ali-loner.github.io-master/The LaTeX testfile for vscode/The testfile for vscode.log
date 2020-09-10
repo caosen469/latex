@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.9.7)  8 SEP 2020 23:45
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.9.7)  9 SEP 2020 01:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,13 +651,26 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [3] [4] [5] (./The testfile for vscode.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
+ [3] [4] [5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 221.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 221.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 221.
+
+(./The testfile for vscode.bbl [6])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 249.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 249.
  (./The testfile for vscode.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 217.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 249.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 249.
 Package rerunfilecheck Info: File `"The testfile for vscode".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 
@@ -665,15 +678,15 @@ Package rerunfilecheck Info: File `"The testfile for vscode".out' has not change
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 249.
  ) 
 Here is how much of TeX's memory you used:
- 15347 strings out of 479418
- 322104 string characters out of 5880186
- 882408 words of memory out of 5000000
- 32588 multiletter control sequences out of 15000+600000
+ 15348 strings out of 479418
+ 322120 string characters out of 5880186
+ 883327 words of memory out of 5000000
+ 32589 multiletter control sequences out of 15000+600000
  538144 words of font info for 86 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  56i,8n,68p,518b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on The testfile for vscode.pdf (6 pages).
+Output written on The testfile for vscode.pdf (7 pages).
