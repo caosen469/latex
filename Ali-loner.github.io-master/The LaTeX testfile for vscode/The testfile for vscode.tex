@@ -35,6 +35,9 @@
 
 \tableofcontents
 
+\section{VSC plug in}
+colonize
+
 \section{This is a section}
 Hello world! Hello Ali! As shown in figure \ref{1}
 \begin{figure}[htbp]
@@ -97,7 +100,7 @@ We calculate the distance, square it, and sum it to get our "OBJECTIVE FUNCTION"
 \end{equation}
 The m is the number of training data point in our dataset.
 \newline
-所以，目标函数的意义就是，衡量一个拟合函数表现得好坏的工具。并且我们的参数是根据优化这个函数来计算得到的。So our goal is to parametrize it (参数化), 调整 \theta 来优化这个目标函数。
+所以，目标函数的意义就是，衡量一个拟合函数表现得好坏的工具。并且我们的参数是根据优化这个函数来计算得到的。So our goal is to parametrize it (参数化), 调整 $\theta$ 来优化这个目标函数。
 
 \subsubsection{Lecture 3}
 Gradient decsent 
@@ -121,6 +124,29 @@ MSE (Mean Square Error), devide SSE by m, which is the data points you have.
 \paragraph{Training and Test Set:}
 
 \subsubsection{Lecture 4}
+Callback: cost function, training set, test set.
+\newline
+today just go through probablity and Stichastic.
+\paragraph{The quizz} interview question.
+Extra point!!!
+\paragraph{Joint Probability}
+Multiple events occur at the same time.
+\paragraph{conditional probablity}
+\begin{equation}
+	P(A|B)=\frac{P(A,B)}{P(B)}
+\end{equation}
+\paragraph{Product Rule}
+$P(A_{1},A_{2}, \dots, A_{n})$ each event is like a data point in the machine learning problem.
+\paragraph{conditional probability}
+
+\paragraph{Bayes Rule}
+One of the most important tool in Machine Learning. It talks about "OBSERVATION",
+\begin{equation}
+	P(reason|observation)=P(observation|reason)\cdot \frac{P(reason)}{P(observation)}
+\end{equation}
+我知道原因导致结果的概率，现在想计算观察到了结果，是由于这个原因导致可能性。
+\newline
+$P(data|observed)$
 
 
 \section{Probability and Estimation Method for Engineering System}
