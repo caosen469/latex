@@ -86,6 +86,19 @@ For the probablistic mechanics, the multi-cimponents system go to the (macro) st
 
 \section{Machine Learning and artifical intelligence for engineers}
 \subsection{Lecture}
+
+\subsubsection{Lecture 2}
+\paragraph{Linear Regression}
+To measure the error, just calculate the difference between the prediction result derived from the hypothesis, and calculate the difference between result and the ground truth. $d_{1}=\theta x^{(1)}-y^{(1)}, d_{2}=\theta x^{(2)}-y^{(2)}, \dots, d_{m}=\theta x^{(m)}-y^{(m)}$. We should sqaure it otherwise it will offset each other.
+\newline
+We calculate the distance, square it, and sum it to get our "OBJECTIVE FUNCTION", So the objective function (I think one type of objective function):
+\begin{equation}
+	\sum_{i=1}^{m}(y^{i}-h(x^{i}))^{2}
+\end{equation}
+The m is the number of training data point in our dataset.
+\newline
+所以，目标函数的意义就是，衡量一个拟合函数表现得好坏的工具。并且我们的参数是根据优化这个函数来计算得到的。So our goal is to parametrize it (参数化), 调整 \theta 来优化这个目标函数。
+
 \subsubsection{Lecture 3}
 Gradient decsent 
 
@@ -106,6 +119,9 @@ the landsacpe is settle (The cost function is the same)
 SSE, sum square error (sum of square error for each sample)
 MSE (Mean Square Error), devide SSE by m, which is the data points you have. 
 \paragraph{Training and Test Set:}
+
+\subsubsection{Lecture 4}
+
 
 \section{Probability and Estimation Method for Engineering System}
 \subsection{Lecture}
@@ -277,7 +293,7 @@ So the result is the total Product of the three term:
 Based on the previous question, the entropy difference could be calculated as following:
 \begin{equation}
 	\Delta S=k \ln (\frac{W_{B}}{W_{A}})=k \ln(1) =0
-\end{equation}}
+\end{equation}
 
 
 \bibliography{books}
