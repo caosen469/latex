@@ -54,7 +54,7 @@ Statistical Mechanics, (some system that not seem to go to the lowest energy)
 Today I watch 46:43
 \bigskip
 
-\section{Probability Theory:}
+\subsection{Probability Theory:}
 \subsection{Probability Distribution}
 All Probability Distribution must be normalized: sum over all possible outcomes must be "1"!
 flip coin is a discrete variable (The outcome only has finite value), but in molecular dynamics we mainly think of continous variable.
@@ -146,7 +146,7 @@ One of the most important tool in Machine Learning. It talks about "OBSERVATION"
 \end{equation}
 我知道原因导致结果的概率，现在想计算观察到了结果，是由于这个原因导致可能性。
 \newline
-$P(data|observed)$
+$P(data|observed)$n
 
 
 \section{Probability and Estimation Method for Engineering System}
@@ -222,6 +222,10 @@ Stirling's approximation
 	N! = (\frac{N}{e})^{N}
 	\ln N! \approx N\ln N- N
 \end{equation}
+
+\subsection{Problem 1}
+use molecular dynamics method to investigate
+
 \subsection{Problem 5}
 Lennard Jones law: $4 \epsilon [(\frac{\sigma}{r})^{12}-(\frac{\sigma}{r})^{6}]$
 For a FCC material $U(d)=\frac{1}{2} 4 \epsilon $
@@ -295,6 +299,35 @@ So, for the waterdrop with 1 nm, the number of pairs is; For the mm pair, the nu
 When I try to print the number, there is a overflow error in python.
 
 \subsection{Problem 7}
+\subsubsection{(a)}
+There are total 100 votes remained. If A wants to win the electration, A has to get 40 votes at least. So there are following possible situation that A will win: $A_{i}:\text{A gets i votes and win,} i={40,50,60, \dots, 100}$.
+$$
+\begin{cases}
+	A_{40}=C_{4}^{2}+C_{4}^{1} \cdot C_{2}^{2}=10 \\
+	A_{50}=C_{2}^{1} \cdot C_{4}^{2}=12 \\
+	A_{60}=C_{2}^{0} \cdot C_{4}^{3} + C_{2}^{2} \cdot C_{4}^{2}=10 \\
+	A_{70}=C_{2}^{1} \cdot C_{4}^{3}=8 \\
+	A_{80}=C_{2}^{0} \cdot C_{4}^{4} + C_{2}^{2} \cdot C_{4}^{3}=5 \\
+	A_{90}=C_{2}^{1} \cdot C_{4}^{4}=2 \\
+	A_{100}=C_{2}^{2} \cdot C_{4}^{4}=1
+\end{cases}
+$$
+So, $W_{A}=\sum_{i=40}^{100} A_{i}=48$
+
+\subsubsection{(b)}
+Same idea like (a), B has to get at least 70 votes to win the electration, so there are 4 situations that B can win: $B_{i}:\text{B gets i votes and win,} i={70, 80 \dots, 100}$
+$$
+\begin{cases}
+	B_{70}=C_{2}^{1} \cdot C_{4}^{3}=8 \\
+	B_{80}=C_{2}^{0} \cdot C_{4}^{4} + C_{2}^{2} \cdot C_{4}^{3}=5 \\
+	B_{90}=C_{2}^{1} \cdot C_{4}^{4}=2 \\
+	B_{100}=C_{2}^{2} \cdot C_{4}^{4}=1
+\end{cases}
+$$
+So, $W_{B}=\sum_{i=70}^{100} B_{i}=16$
+
+\subsubsection{(c)}
+Note A beats B as event C, then $P(C)=\frac{W_{A}}{W_{A}+W_{B}}=\frac{3}{4}=75 \%$
 
 \subsection{Problem 8}
 \subsubsection{a}
@@ -320,6 +353,10 @@ Based on the previous question, the entropy difference could be calculated as fo
 \begin{equation}
 	\Delta S=k \ln (\frac{W_{B}}{W_{A}})=k \ln(1) =0
 \end{equation}
+
+\section{Latex usage}
+The citation part of using latex: \url{https://zhuanlan.zhihu.com/p/25013341}.
+在写文档之前的引用库部分，使用“usepackage{apacite}，bibliographystyle{apacite}”。行文中要引用就使用citeA{konishi:1999ab}。在结束问当前添加bibliography{example}，example是文献数据库的名字 (example.bib)
 
 
 \bibliography{books}
