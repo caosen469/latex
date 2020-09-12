@@ -432,6 +432,7 @@ Event $A \bot C$ want all three days have the same weather but at the same time 
 So A and C are not independent event. It is reasonable, because A and C could not happen at the same time, so we definetly can learn some thing from one event about the other event.
 
 \subsection{Problem 4}
+\subsubsection{(a)}
 According to the condition given in the problem statement, we have: $P(S)=0.2 \%, P(O|S)=25 \%, P(S^{c}=1-P(S)-98 \%, P(O|S^{c}=98 \%))$. Based on those, we could derive the joint probability:
 \begin{equation}
 	P(O,S)=P(S)\cdot P(O|S)=2 \% \times 25 \% =0.5 \%\\
@@ -441,6 +442,15 @@ According to the total probablity, the marginal probability of outage is:
 \begin{equation}
 	P(O)=P(O,S)+P(O,S^{c})=0.794\%
 \end{equation}
+
+\subsubsection{(b)}
+The conditional probability of strom occured when observed outage is:
+\begin{equation}
+	P(S|O)=\frac{P(S,O)}{P(O)}=\frac{0.5 \%}{0.794 \%}=62.97 \%
+\end{equation}
+\subsubsection{(c)}
+\subsubsection{(d)}
+
 
 \section{Latex usage}
 The citation part of using latex: \url{https://zhuanlan.zhihu.com/p/25013341}.
