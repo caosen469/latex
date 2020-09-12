@@ -216,7 +216,7 @@ For the image Processing, there are point operation and neighborhood operation.
 \subsubsection{Lecture 3}
 
 \bigskip
-\section{Homework Part}
+\section{MD Homework Part}
 Stirling's approximation 
 \begin{equation}
 	N! = (\frac{N}{e})^{N}
@@ -362,6 +362,51 @@ Based on the previous question, the entropy difference could be calculated as fo
 \begin{equation}
 	\Delta S=k \ln (\frac{W_{B}}{W_{A}})=k \ln(1) =0
 \end{equation}
+\newline
+\subsection{Problem 9}
+Proving this equation is larger than 0 equals to prove:
+\begin{equation}
+	\int _{-\infty}^{+\infty}\frac{\partial}{\partial t}[\rho(x,t)\ln \rho(x,t)]dx \leq 0
+\end{equation}
+The equation can be transformed to (ignored D):
+\begin{equation}
+	\int_{-\infty}^{+\infty}(\ln \rho +1)\frac{\partial^{2}\rho}{\partial x^{2}}dx =
+	\int_{-\infty}^{+\infty}(\ln \rho +1) d(\frac{\partial \rho}{\partial x})
+\end{equation}
+Based on the intergation by parts, it could be written as:
+\begin{equation}
+	(\ln \rho +1)\cdot \frac{\partial \rho}{\partial x}|_{-\infty}^{+\infty}-\int_{-\infty}^{+\infty}\frac{\partial \rho}{\partial x}d(\ln \rho +1)=\\
+	\int_{-\infty}^{+\infty}\frac{\partial \rho}{\partial x}d(\ln \rho +1)=\\
+	-\int_{-\infty}^{+\infty}(\frac{\partial \rho}{\partial x})^{2}\frac{1}{\rho}dx
+\end{equation}
+which is obvious less than 0, because all things in intergation is positive but there is a minus outside. So this also obey second law.
+
+\section{概率论作业}
+
+\subsection{Problem 3}
+\subsubsection{(a)}
+To prove $A\bot B$, we just need to prove the following equation:
+\begin{equation}
+	P(AB)=P(A)\cdot P(B)
+\end{equation}
+The event A could has two corresponding outcomes: (1) One day is rainy, and other two days are sunny; (2) One day is sunny, and other two days are rainy. So $P(A)$ could be calculated through:
+\begin{equation}
+	P(A)=C_{3}^{1} \times \frac{1}{2} \times \frac{1}{2}^{2} \times 2=\frac{3}{4}
+\end{equation}
+To calculate $P(B)$, event B could also be devided into two outcomes: (1)one day is rainy; (2) all days are sunny. So $P(B)$ can be derived from:
+\begin{equation}
+	P(B)=(\frac{1}{2})^{3}+C_{3}^{1}\times \frac{1}{2} \frac{1}{2}^{2}=\frac{1}{2}
+\end{equation}
+
+$A \cap B$ means exactly one day is rainy, and two other days are sunny, so:
+\begin{equation}
+	P(A,B)=C_{3}^{1} \times \frac{1}{2} \times \frac{1}{2}^{3}=\frac{3}{8}
+\end{equation}
+So, we have:
+\begin{equation}
+	P(A,B)=P(A)\cdot P(B)
+\end{equation}
+So, we can say that $A \bot B$.
 
 \section{Latex usage}
 The citation part of using latex: \url{https://zhuanlan.zhihu.com/p/25013341}.
