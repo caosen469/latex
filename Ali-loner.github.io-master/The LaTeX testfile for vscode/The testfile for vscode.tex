@@ -408,6 +408,40 @@ So, we have:
 \end{equation}
 So, we can say that $A \bot B$.
 
+we could prove that $P(B,C)=P(B)\cdot P(C)$ to prove that $B \bot C$.
+To calculate $P(C)$, we could devide event C into two outcomes: (1) All sunny days; (2) All rainy days.
+\begin{equation}
+	P(C)=\frac{1}{2}^{3}+\frac{1}{2}^{3}=\frac{1}{4}
+\end{equation}
+
+The event $B \cap C$ means all days are sunny days, so:
+\begin{equation}
+	P(B,C)=\frac{1}{2}^{3}=\frac{1}{8}
+\end{equation}
+
+So, 
+\begin{equation}
+	P(B)\cdot P(C)=\frac{1}{4} \times \frac{1}{2}=\frac{1}{8}=P(B,C)
+\end{equation}
+Then we can say that $B \bot C$.
+\subsubsection{(b)}
+Event $A \bot C$ want all three days have the same weather but at the same time include at least one rainy day and sunny day, which is impossible. So:
+\begin{equation}
+	P(A,C)=0 \neq P(A)\cdot P(C)=\frac{3}{16}
+\end{equation}
+So A and C are not independent event. It is reasonable, because A and C could not happen at the same time, so we definetly can learn some thing from one event about the other event.
+
+\subsection{Problem 4}
+According to the condition given in the problem statement, we have: $P(S)=0.2 \%, P(O|S)=25 \%, P(S^{c}=1-P(S)-98 \%, P(O|S^{c}=98 \%))$. Based on those, we could derive the joint probability:
+\begin{equation}
+	P(O,S)=P(S)\cdot P(O|S)=2 \% \times 25 \% =0.5 \%\\
+	P(O,S^{c})=P(S^{c}) \cdot p(O|S^{c})=98 \times 0.3 \%=0.294\%
+\end{equation}
+According to the total probablity, the marginal probability of outage is:
+\begin{equation}
+	P(O)=P(O,S)+P(O,S^{c})=0.794\%
+\end{equation}
+
 \section{Latex usage}
 The citation part of using latex: \url{https://zhuanlan.zhihu.com/p/25013341}.
 在写文档之前的引用库部分，使用“usepackage{apacite}，bibliographystyle{apacite}”。行文中要引用就使用citeA{konishi:1999ab}。在结束问当前添加bibliography{example}，example是文献数据库的名字 (example.bib)

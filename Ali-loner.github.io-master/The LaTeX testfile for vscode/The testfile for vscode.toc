@@ -63,4 +63,6 @@
 \contentsline {section}{\numberline {9}概率论作业}{11}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Problem 3}{11}{subsection.9.1}%
 \contentsline {subsubsection}{\numberline {9.1.1}(a)}{11}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}(b)}{12}{subsubsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.2}Problem 4}{12}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Latex usage}{12}{section.10}%
