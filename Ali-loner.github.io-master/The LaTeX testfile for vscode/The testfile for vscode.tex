@@ -451,6 +451,85 @@ The conditional probability of strom occured when observed outage is:
 \subsubsection{(c)}
 \subsubsection{(d)}
 
+\subsection{Problem 5}
+$A \bot B|C$ does not imply $A \bot B|C^{c}$. For example, a parallel system consists of component A and component B. Event A and B means corresponding components fail, and C means a earthquake happens. A and B are independent when earthquake happens. But if 
+
+\subsection{Problem 6}
+\subsubsection{(a)}
+Note the 4 component as 1, 2 , 3 and 4 from left to right. The reliability of the system is: 
+\begin{equation}
+	r_{s} = r_{1}r_{2}r_{3}r_{4}=(1-p_{1})(1-p_{2})(1-p_{3})(1-p_{4})=91.28\%
+\end{equation}
+
+So the probability of the system failure is:
+\begin{equation}
+	p_{s}=1-r_{s}=8.72\%
+\end{equation}
+
+\subsubsection{(b)}
+The approximation of the probability that system fails is:
+\begin{equation}
+	p_{s}=p_{1}+p_{2}+p_{3}+p_{4}=9\%
+\end{equation}
+which overestimates the actual value, because it does not count the situations that multiple components may fail.
+
+\subsubsection{(c)}
+Based on previous problem, we have $P(S|A_{1})=8.72 \%$
+To calculate $P(S|A_{2})$:
+\begin{equation}
+	r_{s}=0.96 \times 0.92 \times 0.98 \times 0.96 = 0.8309\\
+	P(S|A_{2})=1- r_{s}=16.91 \%
+\end{equation}
+Same for $P(S|A_{3})$:
+\begin{equation}
+	r_{s}=0.92 \times 0.84 \times 0.96 \times 0.92 = 0.6825\\
+	P(S|A_{2})=1- r_{s}=31.75 \%
+\end{equation}
+Then we could compute joint probability of system failure with different intensity:
+\begin{equation}
+	P(S, A_{1})=P(A_{1})\cdot P(S|A_{1})=60 \% \times 8.72 \% =5.2 \%\\
+	P(S, A_{2})=P(A_{2})\cdot P(S|A_{2})=30 \% \times 16.91 \% =5.07 \%\\
+	P(S, A_{3})=P(A_{3})\cdot P(S|A_{3})=10 \% \times 31.75 \% =3.18 \%
+\end{equation}
+According to the total probability:
+\begin{equation}
+	P(S,A)=P(S, A_{1})+P(S, A_{2})+P(S, A_{3})=13.45 \%
+\end{equation}
+\subsection{Problem 7}
+Event S represents that the system fails.
+\subsubsection{(a)}
+First step: combine two components whose failure probabilities are 0.02 and 0.04:
+\begin{equation}
+	P_{new}=1-(1-0.02)(1-0.04)=0.0592
+\end{equation} 
+The system becomes: start--->(0.30)--->(0.0592)|(0.40)--->ends.
+Then combine the components whose failure probabilities are 0.0592 and 0.40:
+\begin{equation}
+	P_{new}=0.0592 \times 0.40 = 0.02368
+\end{equation}
+The system becomes: start ---> 0.30 ---> 0.02368 --->end, which is a serial system.
+The the failure probability of the system is:
+\begin{equation}
+	P(S)=1-(1-0.30)(1-0.2368)=0.316576 \approx 31.7 \%
+\end{equation}
+\subsubsection{(b)}
+$P(c_{1}|S)=\frac{P(c_{1},S)}{P(S)}$. $P(S)$ is calculated in the previous question, and the value is $31.7 \%$.
+To calculate $P(c_{1},S)$, we could use:
+\begin{equation}
+	P(c_{1},S)=P(c_{1})\cdot P(S|c_{1})
+\end{equation}
+Considering the system configuration and values, $P(c_{1})=0.30$, and it is easy to find that when $c_{1}$ doesn't work, the system breaks down, so $P(S|c_{1}=1)$.
+So:
+\begin{equation}
+	P(c_{1},S)=P(c_{1})\cdot P(S|c_{1})=30 \%
+\end{equation}
+Finally,
+\begin{equation}
+	P(c_{1}|S)=\frac{P(c_{1},S)}{P(S)}=\frac{30 \%}{31.7 \%}=94.6 \%
+\end{equation}
+
+\subsection{Problem 8}
+
 
 \section{Latex usage}
 The citation part of using latex: \url{https://zhuanlan.zhihu.com/p/25013341}.
